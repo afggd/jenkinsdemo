@@ -127,14 +127,30 @@
         </profile>
     </profiles>
 
-    <distributionManagement>
-        <snapshotRepository>
-            <id>snapshots</id><!-- 这个id和settings.xml中的server标签下的对应 -->
-            <url>http://192.168.235.128:8081/repository/maven-snapshots/</url><!-- nexus的仓储地址 -->
-        </snapshotRepository>
+<!--    <distributionManagement>-->
+<!--        <snapshotRepository>-->
+<!--            <id>snapshots</id>&lt;!&ndash; 这个id和settings.xml中的server标签下的对应 &ndash;&gt;-->
+<!--            <url>http://192.168.235.128:8081/repository/maven-snapshots/</url>&lt;!&ndash; nexus的仓储地址 &ndash;&gt;-->
+<!--        </snapshotRepository>-->
+<!--        <repository>-->
+<!--            <id>releases</id>-->
+<!--            <url>http://192.168.235.128:8081/repository/maven-releases/</url>-->
+<!--        </repository>-->
+<!--    </distributionManagement>-->
+
+    <repositories><!-- 代码库 -->
         <repository>
-            <id>releases</id>
-            <url>http://192.168.235.128:8081/repository/maven-releases/</url>
+            <id>maven-ali</id>
+            <url>http://maven.aliyun.com/nexus/content/groups/public//</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
+            </snapshots>
         </repository>
-    </distributionManagement>
+    </repositories>
+
 </project>
